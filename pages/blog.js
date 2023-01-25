@@ -10,9 +10,9 @@ export default function Blog ({ posts }) {
       '@context': 'http://schema.org',
       '@type': 'WebSite',
       name: 'Blog de soluciones de desarrollo web y marketing | EngelDelgado',
-      url: 'https://www.engeldelgado.com',
+      url: 'https://engeldelgado.com',
       description: 'Aprende a mejorar tu presencia en línea con nuestros artículos de desarrollo web y marketing. Explora nuestras soluciones innovadoras y conviértete en un experto en el tema.',
-      image: 'https://www.engeldelgado.com/imagenes/logo.jpg'
+      image: 'https://engeldelgado.com/imagenes/logo.jpg'
     }
   ]
   return (

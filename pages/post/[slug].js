@@ -32,7 +32,7 @@ export default function SinglePost ({ frontmatter, content, slug }) {
         name: 'Engel Delgado',
         logo: {
           '@type': 'ImageObject',
-          url: 'https://www.engeldelgado.com/imagenes/logo.jpg'
+          url: 'https://engeldelgado.com/imagenes/logo.jpg'
         }
       },
       description: { excerpt }

@@ -10,7 +10,7 @@ export default function Home ({ posts }) {
       '@context': 'http://schema.org',
       '@type': 'WebSite',
       name: 'Soluciones de desarrollo web y marketing con 10 años de experiencia',
-      url: 'https://www.engeldelgado.com',
+      url: 'https://engeldelgado.com',
       description: 'Soluciones innovadoras en diseño web y marketing con más de 10 años de experiencia. Explora mi trabajo y contáctame para saber cómo puedo ayudarte a alcanzar tus metas.',
       image: 'https://www.engeldelgado.com/imagenes/logo.jpg'
     },
