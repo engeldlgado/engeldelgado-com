@@ -16,11 +16,11 @@ export function Links ({ isNav }) {
         {links.map((link, index) => {
           if (link.href.includes('#')) {
             return (
-              <li key={index}><Link href={link.href} scroll={false}>{link.name}</Link></li>
+              <li key={index}><Link href={link.href} scroll={false} aria-label={link.name}>{link.name}</Link></li>
             )
           } else {
             return (
-              <li key={index}><Link href={link.href}>{link.name}</Link></li>
+              <li key={index}><Link href={link.href} aria-label={link.name}>{link.name}</Link></li>
             )
           }
         }
@@ -33,11 +33,11 @@ export function Links ({ isNav }) {
         {links.map((link, index) => {
           if (link.href.includes('#')) {
             return (
-              <Link key={index} className='link link-hover' href={link.href} scroll={false}>{link.name}</Link>
+              <Link key={index} className='link link-hover' href={link.href} scroll={false} aria-label={link.name}>{link.name}</Link>
             )
           } else {
             return (
-              <Link key={index} className='link link-hover' href={link.href}>{link.name}</Link>
+              <Link key={index} className='link link-hover' href={link.href} aria-label={link.name}>{link.name}</Link>
             )
           }
         }
@@ -59,10 +59,10 @@ export default function Navigation ({ setTheme, theme }) {
             <Links isNav />
           </ul>
         </div>
-        <Link href='/'><Logo className='hidden w-56 transition-colors duration-500 dark:fill-white fill-black md:ml-20 lg:block' /></Link>
+        <Link href='/' aria-label='hidden'><Logo className='hidden w-56 transition-colors duration-500 dark:fill-white fill-black md:ml-20 lg:block' /></Link>
       </div>
       <div className='flex navbar-center lg:hidden'>
-        <Link href='/'><Logo className='transition-colors duration-500 dark:fill-white w-44 fill-black' /></Link>
+        <Link href='/' aria-label='hidden'><Logo className='transition-colors duration-500 dark:fill-white w-44 fill-black' /></Link>
       </div>
       <div className='hidden navbar-center lg:flex '>
         <ul className='px-1 font-medium menu menu-horizontal'>
@@ -71,7 +71,11 @@ export default function Navigation ({ setTheme, theme }) {
       </div>
       <div className='navbar-end'>
         {/* Dark/Light button */}
-        <label className='mr-5 swap swap-rotate'>
+        <label
+          className='mr-5 swap swap-rotate'
+          aria-label='hidden'
+
+        >
 
           <input
             type='checkbox'

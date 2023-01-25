@@ -15,7 +15,7 @@ const MainBlog = ({ posts }) => {
           <div key={id} className='flex flex-col overflow-hidden rounded-lg shadow-lg'>
             <div className='flex-shrink-0'>
               <Link href={postLink}>
-                <img className='object-cover w-full h-48' src={bannerImage} alt={title} />
+                <Image className='object-cover w-full h-48' src={bannerImage} alt={title} width={384} height={192} />
               </Link>
             </div>
             <div className='flex flex-col justify-between flex-1 p-6 bg-white dark:bg-gray-900'>
