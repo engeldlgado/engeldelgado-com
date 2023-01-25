@@ -147,10 +147,10 @@ export default function MidSection ({ posts }) {
       </div>
 
       {/* TODO:Blog section */}
-      <div className='relative py-16 bg-gray-50 dark:bg-base-100 sm:py-24 lg:py-24'>
+      <div className='relative py-16 dark:bg-base-100 sm:py-24 lg:py-24'>
         <div className='relative'>
           <div className='max-w-md px-4 mx-auto text-center sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-7xl'>
-            <h2 className='text-base font-semibold tracking-wider uppercase dark:text-primary text-secondary'>¡Aprende conmigo!</h2>
+            <h3 className='text-base font-semibold tracking-wider uppercase dark:text-primary text-secondary'>Aprende Cada día más</h3>
             <p className='mt-2 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-4xl'>
               Recursos Útiles
             </p>

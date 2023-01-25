@@ -53,7 +53,7 @@ module.exports = {
           ...require('daisyui/src/colors/themes')['[data-theme=light]'],
           primary: '#fb8532',
 
-          secondary: '#fb8532',
+          secondary: '#c75200',
 
           accent: '#7ee787',
 
