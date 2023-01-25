@@ -20,10 +20,10 @@ export default function MainHero () {
                 <span className='ml-4 text-sm'>Explora mi trabajo</span>
                 <ChevronRightIcon className='w-5 h-5 ml-2 text-gray-500' aria-hidden='true' />
               </Link>
-              <h1 className='mt-4 text-4xl font-extrabold tracking-tight transition-colors duration-500 dark:text-white text-neutral sm:mt-5 sm:text-6xl lg:mt-6 xl:text-6xl'>
+              <h2 className='mt-4 text-4xl font-extrabold tracking-tight transition-colors duration-500 dark:text-white text-neutral sm:mt-5 sm:text-6xl lg:mt-6 xl:text-6xl'>
                 <span className='block'>Soluciones de</span>
                 <span className='block text-secondary dark:text-primary'>desarrollo web y marketing</span>
-              </h1>
+              </h2>
               <p className='mt-3 text-base dark:text-gray-300 text-neutral sm:mt-5 sm:text-xl lg:text-lg xl:text-xl'>
                 Mi experiencia en diseño web y marketing te ayudará a destacar en el mercado y atraer a más clientes potenciales. ¡Echa un vistazo a mi trabajo y contáctame para saber más sobre cómo puedo ayudarte!
               </p>

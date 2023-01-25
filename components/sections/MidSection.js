@@ -48,6 +48,7 @@ export default function MidSection ({ posts }) {
     <>
       {/* Feature section with grid */}
       <div id='about' className='relative py-16 sm:py-24'>
+        <h1 className='max-w-2xl mx-auto text-2xl font-extrabold tracking-tight text-center text-gray-900 dark:text-indigo-500 sm:text-3xl'>Soluciones de desarrollo web y marketing con 10 años de experiencia</h1>
         <div className='lg:mx-auto lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-2 lg:gap-24 lg:items-center'>
 
           <div className='relative max-w-md px-4 mx-auto sm:max-w-3xl sm:px-6 lg:px-0'>

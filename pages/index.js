@@ -35,11 +35,11 @@ export default function Home ({ posts }) {
     <>
       <MainLayout
         title='Soluciones de desarrollo web y marketing con 10 años de experiencia'
-        description='Obtén soluciones innovadoras y centradas en el cliente para tu presencia en línea con nuestros servicios de desarrollo web y marketing. Contactanos para saber más.'
+        description='Obtén soluciones innovadoras y centradas en el cliente para tu presencia en línea con nuestros servicios de desarrollo web y marketing. Contactanos ahora mismo'
         ogType='website'
         ogUrl='https://engeldelgado.com'
         ogImage='https://engeldelgado.com/imagenes/Imagine-og.jpg'
-        ogDescription='Bienvenido a mi web personal. Aquí podrás ver algunos de los proyectos en los que he trabajado y mis habilidades en desarrollo web. Si estás buscando un profesional para mejorar tu presencia en línea, no dudes en contactarme para discutir cómo podemos trabajar juntos.'
+        ogDescription='Obtén soluciones innovadoras y centradas en el cliente para tu presencia en línea con nuestros servicios de desarrollo web y marketing. Contactanos para saber más.'
         schemaObject={structureData}
       >
         {/* Main section start */}
