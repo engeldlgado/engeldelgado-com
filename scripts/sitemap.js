@@ -1,15 +1,12 @@
-import glob from 'glob'
+const fs = require('fs')
+const glob = require('glob')
 
-const Sitemap = () => {
-  return null
-}
-
-export const getServerSideProps = async ({ res }) => {
-  const BASE_URL = 'https://engeldlgado.com'
-
-  // get static paths
+async function genSitemap (page) {
+  const BASE_URL = process.env.WEBSITE_URL
   const pageDirs = 'pages/**/*.js'
   let pagesPaths = await glob.sync(pageDirs)
+
+  console.log('Generating sitemap.xml...')
 
   pagesPaths = pagesPaths
     .filter((path) => !path.includes('['))
@@ -70,14 +67,8 @@ export const getServerSideProps = async ({ res }) => {
         .join('')}
     </urlset>
   `
-
-  res.setHeader('Content-Type', 'text/xml')
-  res.write(sitemap)
-  res.end()
-
-  return {
-    props: {}
-  }
+  fs.writeFileSync('public/sitemap.xml', sitemap)
+  console.log('sitemap.xml generated')
 }
 
-export default Sitemap
+genSitemap()
