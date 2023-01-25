@@ -9,37 +9,39 @@ export default function SinglePost ({ frontmatter, content, slug }) {
   // Destructure the frontmatter
   const { title, author, date, bannerImage, tags, excerpt } = frontmatter
 
-  const structureData = {
-    '@context': 'https://schema.org',
-    '@type': 'BlogPosting',
-    mainEntityOfPage: {
-      '@type': 'WebPage',
-      '@id': `https://engeldelgado.com/post/${slug}`
-    },
-    headline: { title },
-    image: [
-      { bannerImage }
-    ],
-    datePublished: { date },
-    dateModified: { date },
-    author: {
-      '@type': 'Person',
-      name: { author }
-    },
-    publisher: {
-      '@type': 'Organization',
-      name: 'Engel Delgado',
-      logo: {
-        '@type': 'ImageObject',
-        url: 'https://www.engeldelgado.com/imagenes/logo.jpg'
-      }
-    },
-    description: { excerpt }
-  }
+  const structureData = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BlogPosting',
+      mainEntityOfPage: {
+        '@type': 'WebPage',
+        '@id': `https://engeldelgado.com/post/${slug}`
+      },
+      headline: { title },
+      image: [
+        { bannerImage }
+      ],
+      datePublished: { date },
+      dateModified: { date },
+      author: {
+        '@type': 'Person',
+        name: { author }
+      },
+      publisher: {
+        '@type': 'Organization',
+        name: 'Engel Delgado',
+        logo: {
+          '@type': 'ImageObject',
+          url: 'https://www.engeldelgado.com/imagenes/logo.jpg'
+        }
+      },
+      description: { excerpt }
+    }
+  ]
 
   return (
     <MainLayout
-      title={`${title} | Engel Delgado`}
+      title={`${title}`}
       description={excerpt}
       ogType='website'
       ogUrl={`https://engeldelgado.com/post/${slug}`}

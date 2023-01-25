@@ -5,22 +5,24 @@ import BlogHero from '../components/hero/BlogHero'
 import MainBlog from '../components/blog/MainBlog'
 
 export default function Blog ({ posts }) {
-  const structureData = {
-    '@context': 'http://schema.org',
-    '@type': 'WebSite',
-    name: 'Blog de desarrollo web y tecnología | EngelDelgado',
-    url: 'https://www.engeldelgado.com',
-    description: 'Bienvenido a mi blog personal. Aquí podrás encontrar artículos sobre desarrollo web, tecnología y marketing digital. Si estás buscando aprender más sobre estos temas o quieres conocer mi opinión sobre los últimos avances, no dudes en seguir leyendo.',
-    image: 'https://www.engeldelgado.com/imagenes/logo.jpg'
-  }
+  const structureData = [
+    {
+      '@context': 'http://schema.org',
+      '@type': 'WebSite',
+      name: 'Blog de soluciones de desarrollo web y marketing | EngelDelgado',
+      url: 'https://www.engeldelgado.com',
+      description: 'Aprende a mejorar tu presencia en línea con nuestros artículos de desarrollo web y marketing. Explora nuestras soluciones innovadoras y conviértete en un experto en el tema.',
+      image: 'https://www.engeldelgado.com/imagenes/logo.jpg'
+    }
+  ]
   return (
     <MainLayout
-      title='Blog de desarrollo web y tecnología | EngelDelgado'
-      description='Bienvenido a mi blog personal. Aquí podrás encontrar artículos sobre desarrollo web, tecnología y marketing digital. Si estás buscando aprender más sobre estos temas o quieres conocer mi opinión sobre los últimos avances, no dudes en seguir leyendo.'
+      title='Blog de soluciones innovadoras de desarrollo web y marketing'
+      description='Aprende a mejorar tu presencia en línea con nuestros artículos de desarrollo web y marketing. Explora nuestras soluciones innovadoras y conviértete en un experto en el tema.'
       ogType='website'
       ogUrl='https://engeldelgado.com'
       ogImage='https://engeldelgado.com/imagenes/Imagine-og.jpg'
-      ogDescription='Bienvenido a mi blog personal. Aquí podrás encontrar artículos sobre desarrollo web, tecnología y marketing digital. Si estás buscando aprender más sobre estos temas o quieres conocer mi opinión sobre los últimos avances, no dudes en seguir leyendo.'
+      ogDescription='Aquí encontrarás contenido actualizado sobre soluciones de desarrollo web y marketing. Explora nuestros artículos y aprende cómo mejorar tu presencia en línea.'
       schemaObject={structureData}
     >
       <BlogHero />

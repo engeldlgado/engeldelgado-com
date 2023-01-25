@@ -199,18 +199,38 @@ export default function MidSection ({ posts }) {
                 <div className='flex justify-center px-5 py-3 font-medium'>
                   <div className='flex items-center mr-1 text-white duration-300 hover:text-primary'>
                     <MailIcon className='w-5 h-5 mr-1 ' aria-hidden='true' />
-                    <a href='mailto:hola@engeldelgado.com'>
+                    <a href='mailto:hola@engeldelgado.com' itemProp='email'>
                       hola@engeldelgado.com
                     </a>
                   </div>
                   <div className='flex items-center ml-5 text-white duration-300 hover:text-primary'>
                     <PhoneIcon className='w-5 h-5 mr-1' aria-hidden='true' />
-                    <a href='tel:+584242081347'>
+                    <a href='tel:+584242081347' itemProp='telephone'>
                       +58 424 208 13 47
                     </a>
                   </div>
                 </div>
               </div>
+            </div>
+            <div className='hidden mt-8' itemScope itemType='http://schema.org/Person'>
+              <span itemProp='name'>Engel Delgado</span>
+              <div itemProp='jobTitle'>Full Stack Developer</div>
+              <div itemProp='description'>El desarrollo web es mi pasión. Soy Engelbert Vizcaya, Full Stack Developer con más de 10 años de experiencia en la industria. Mi experiencia incluye el uso de tecnologías como JavaScript, React, NextJS, Node.js, GraphQL, MongoDB y WordPress, así como HTML/CSS. Mi objetivo es entregar soluciones innovadoras y centradas en el cliente que superen las expectativas del negocio y cumplan los objetivos del proyecto. Soy una persona emprendedora y siempre busco entregar proyectos de alta calidad y cumplir con los requerimientos del cliente. Soy un buen colaborador en equipo con excelentes habilidades de comunicación y una pasión por la innovación.</div>
+              <div itemProp='address' itemScope itemType='http://schema.org/PostalAddress'>
+                <span itemProp='streetAddress'>Casco central</span>
+                <span itemProp='addressLocality'>Los Teques</span>,
+                <span itemProp='addressRegion'>Miranda</span>
+                <span itemProp='postalCode'>1201</span>
+                <span itemProp='addressCountry'>Venezuela</span>
+              </div>
+              <div>
+                Tel: <span itemProp='telephone'>+58 424 208 13 47</span>
+                Correo: <span itemProp='email'>hola@engeldelgado.com</span>
+              </div>
+            </div>
+            <div className='hidden' itemScope itemType='http://schema.org/Service'>
+              <span itemProp='name'>Servicios de desarrollo web y marketing</span>
+              <div itemProp='description'>Ofrezco servicios de diseño web personalizado, diseño adaptable, desarrollo de aplicaciones web de una sola página (SPA) y WebApps, optimización de rendimiento, integraciones fáciles y soporte técnico siempre disponible para mejorar tu presencia en línea y atraer más clientes potenciales. </div>
             </div>
           </div>
         </div>

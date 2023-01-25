@@ -1,6 +1,6 @@
 ---
 id: 1
-title: "Web Page Vitals: Importancia de medir la experiencia del usuario en un sitio web"
+title: "Mejora la experiencia de usuario con Web Page Vitals"
 author:
     name: "Engelbert Vizcaya"
     url: "https://engeldlgado.com"
@@ -8,7 +8,7 @@ avatar: "https://res.cloudinary.com/dxhsmq1pv/image/upload/v1674602092/engeldlga
 category: "Desarrollo web"
 date: "24-01-2023"
 bannerImage: "https://res.cloudinary.com/dxhsmq1pv/image/upload/v1674606061/engeldlgado/post/core-web-vitals-banner_tbusx2.jpg"
-excerpt: "Web Page Vitals es un conjunto de medidas clave que ayudan a evaluar la calidad de la experiencia del usuario en un sitio web."
+excerpt: "Aprende a medir la calidad de la experiencia del usuario en tu sitio web con las medidas clave de Web Page Vitals: tiempos de carga, estabilidad, interacción y visualización en diferentes dispositivos."
 readTime: "6 min"
 tags:
     - desarrollo web
@@ -16,7 +16,6 @@ tags:
     - medidas clave
     - web page vitals
 ---
-
 
 ## ¿Qué son las Web Page Vitals?
 
