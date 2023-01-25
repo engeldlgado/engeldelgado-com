@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Head from 'next/head'
 import Navigation from '../navigation/Navigation'
+import { Footer } from '../sections/Footer'
 
 const Layout = ({ children, title, description, ogType, ogUrl, ogImage, ogDescription, schemaObject }) => {
   const [theme, setTheme] = useState('')
@@ -11,8 +12,8 @@ const Layout = ({ children, title, description, ogType, ogUrl, ogImage, ogDescri
       if (theme) {
         setTheme(theme)
       } else {
-        localStorage.setItem('theme', 'dark')
-        setTheme('dark')
+        localStorage.setItem('theme', 'light')
+        setTheme('light')
       }
     }
   }, [])
@@ -41,9 +42,19 @@ const Layout = ({ children, title, description, ogType, ogUrl, ogImage, ogDescri
         <meta property='og:type' content={ogType} />
         <meta property='og:url' content={ogUrl} />
         <meta property='og:image' content={ogImage} />
-        <script type='application/ld+json'>
-          {schemaObject}
-        </script>
+        <meta name='twitter:card' content='summary_large_image' />
+        <meta name='twitter:site' content='@engeldlgado' />
+        <meta name='twitter:creator' content='@engeldlgado' />
+        <meta name='twitter:title' content={title} />
+        <meta name='twitter:description' content={description} />
+        <meta name='twitter:image' content={ogImage} />
+        {/* Png Favicon / SVG */}
+        <link rel='icon' href='/favicon.png' />
+        <script
+          key='structured-data'
+          type='application/ld+json'
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaObject) }}
+        />
       </Head>
       <Navigation
         theme={theme}
@@ -52,6 +63,7 @@ const Layout = ({ children, title, description, ogType, ogUrl, ogImage, ogDescri
       <main>
         {children}
       </main>
+      <Footer />
     </>
   )
 }

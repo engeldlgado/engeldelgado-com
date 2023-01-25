@@ -9,7 +9,20 @@ module.exports = {
       backgroundImage: {
         'tech-bg': "url('/imagenes/tech-bg.jpg')"
         // 'footer-texture': "url('/img/footer-texture.png')",
-      }
+      },
+      typography: (theme) => ({
+        DEFAULT: {
+          css: {
+            a: {
+              color: theme('colors.primary'),
+              '&:hover': {
+                color: theme('colors.primary')
+              }
+            },
+            maxWidth: '90ch'
+          }
+        }
+      })
     }
   },
   darkMode: 'class',
@@ -38,7 +51,7 @@ module.exports = {
         },
         light: {
           ...require('daisyui/src/colors/themes')['[data-theme=light]'],
-          primary: '#6e40c9',
+          primary: '#fb8532',
 
           secondary: '#fb8532',
 
@@ -57,5 +70,8 @@ module.exports = {
       }
     ]
   },
-  plugins: [require('daisyui')]
+  plugins: [
+    require('@tailwindcss/typography'),
+    require('daisyui')
+  ]
 }
