@@ -1,4 +1,4 @@
-import fs from 'fs'
+import glob from 'glob'
 
 const Sitemap = () => {
   return null
@@ -7,27 +7,29 @@ const Sitemap = () => {
 export const getServerSideProps = async ({ res }) => {
   const BASE_URL = 'https://engeldlgado.com'
 
-  const staticPaths = fs
-    .readdirSync('pages')
-    .filter((staticPage) => {
-      return ![
-        'api',
-        '_app.js',
-        '_document.js',
-        '404.js',
-        'sitemap.xml.js'
-      ].includes(staticPage)
-    })
+  // get static paths
+  const pageDirs = 'pages/**/*.js'
+  let pagesPaths = await glob.sync(pageDirs)
+
+  pagesPaths = pagesPaths
+    .filter((path) => !path.includes('['))
+    .filter((path) => !path.includes('/_'))
+    .filter((path) => !path.includes('404'))
+    .filter((path) => !path.includes('sitemap'))
+    .filter((path) => !path.includes('api'))
+
+  const staticPaths = pagesPaths
     .map((staticPagePath) => {
       return `${BASE_URL}/${staticPagePath}`
     })
 
-  const files = fs.readdirSync('post')
+  const markDownFiles = 'post/**/*.md'
+  const files = await glob.sync(markDownFiles)
 
   // get frontmatter & slug from each post
   const posts = files.map((fileName) => {
     const slug = fileName.replace('.md', '')
-    return `${BASE_URL}/post/${slug}`
+    return `${BASE_URL}/${slug}`
   })
 
   const site = [...staticPaths, ...posts]
@@ -39,6 +41,7 @@ export const getServerSideProps = async ({ res }) => {
           const path = url
             .replace('.js', '')
             .replace('index', '')
+            .replace('/pages', '')
 
             // if post page and not url with slug remove the path
 
