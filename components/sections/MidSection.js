@@ -169,8 +169,8 @@ export default function MidSection ({ posts }) {
             className='object-cover w-full h-full'
             src='/imagenes/soporte-especializado.jpg'
             alt='Mentoring y soporte especializado'
-            width={917}
-            height={534}
+            width={927}
+            height={504}
           />
           <div
             aria-hidden='true'
