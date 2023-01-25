@@ -49,7 +49,7 @@ const Layout = ({ children, title, description, ogType, ogUrl, ogImage, ogDescri
         <meta name='twitter:description' content={description} />
         <meta name='twitter:image' content={ogImage} />
         {/* Png Favicon / SVG */}
-        <link rel='icon' href='/favicon.png' />
+        <link rel='icon' type='image/png' href='/imagenes/favicon.png' />
         <script
           key='structured-data'
           type='application/ld+json'
