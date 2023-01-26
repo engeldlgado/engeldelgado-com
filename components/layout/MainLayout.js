@@ -65,8 +65,8 @@ const Layout = ({ children, title, description, ogType, ogUrl, ogImage, ogDescri
           ))
         )}
         <meta name='robots' content='index, follow' />
-        <meta name='googlebot' content='index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1' />
-        <meta name='bingbot' content='index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1' />
+        <meta name='googlebot' content='index, follow' />
+        <meta name='bingbot' content='index, follow' />
       </Head>
       <Navigation
         theme={theme}

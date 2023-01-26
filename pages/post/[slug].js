@@ -9,33 +9,44 @@ export default function SinglePost ({ frontmatter, content, slug }) {
   // Destructure the frontmatter
   const { title, author, date, bannerImage, tags, excerpt } = frontmatter
 
+  // date ISO 8601
+
+  const dateFormated = date.split('-')
+  const dateISO = `${dateFormated[2]}-${dateFormated[1]}-${dateFormated[0]}T00:00:00-04:00`
+
   const structureData = [
     {
-      '@context': 'https://schema.org',
+      '@context': 'https://schema.org/',
       '@type': 'BlogPosting',
       mainEntityOfPage: {
         '@type': 'WebPage',
         '@id': `https://engeldelgado.com/post/${slug}`
       },
-      headline: { title },
-      image: [
-        { bannerImage }
-      ],
-      datePublished: { date },
-      dateModified: { date },
+      headline: title,
+      description: excerpt,
+      image: {
+        '@type': 'ImageObject',
+        url: bannerImage,
+        width: '1920',
+        height: '1080'
+      },
       author: {
         '@type': 'Person',
-        name: { author }
+        name: author,
+        url: 'https://engeldelgado.com'
       },
       publisher: {
         '@type': 'Organization',
-        name: 'Engel Delgado',
+        name: 'Engelbert Vizcaya',
         logo: {
           '@type': 'ImageObject',
-          url: 'https://engeldelgado.com/imagenes/logo.jpg'
+          url: 'https://engeldelgado.com/imagenes/logo.jpg',
+          width: '500',
+          height: '500'
         }
       },
-      description: { excerpt }
+      datePublished: dateISO,
+      dateModified: dateISO
     }
   ]
 
