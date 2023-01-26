@@ -26,7 +26,7 @@ En este tutorial, aprenderás cómo utilizar Next.js junto con MongoDB para cons
 
 Para comenzar, necesitarás tener Node.js y MongoDB instalados en tu computadora. Si aún no los tienes, puedes descargarlos desde el sitio web oficial.
 
-Descarga: [Node.js](https://nodejs.org/), [MongoDB](https://www.mongodb.com/)
+Descarga: <a href='https://nodejs.org/' target='_blank' rel='nofollow'>Node.JS</a>, <a href='https://www.mongodb.com/' target='_blank' rel='nofollow'>MongoDB</a>
 
 ### Paso 1: Crea un nuevo proyecto Next.js
 
@@ -147,7 +147,7 @@ export default function Posts() {
 ```
 En este ejemplo, estamos importando el modelo `Post` que creamos anteriormente y utilizando el método `find` para obtener todos los documentos de la colección `posts` usando `.map`. Luego, estamos utilizando el estado de React para guardar los datos y mostrarlos en nuestra página.
 
-También puedes utilizar el método `findOne` para obtener un solo documento o utilizar métodos como `findById` para buscar documentos por su ID. Puedes encontrar más información sobre los métodos de búsqueda disponibles en la [documentación de Mongoose](https://mongoosejs.com/docs/).
+También puedes utilizar el método `findOne` para obtener un solo documento o utilizar métodos como `findById` para buscar documentos por su ID. Puedes encontrar más información sobre los métodos de búsqueda disponibles en la <a href='https://mongoosejs.com/docs/' target='_blank' rel='nofollow'>documentación de Mongoose</a>.
 
 ### Paso 5: Optimiza tu aplicación para SEO
 
@@ -155,7 +155,7 @@ Para optimizar tu aplicación Next para SEO, hay varias cosas que debes tener en
 
 Además, debes asegurarte de que tu sitio tenga una estructura de enlace fácil de seguir y utilizar una estrategia de enlace interno adecuada. También debes asegurarte de que tu sitio está optimizado para dispositivos móviles y que carga rápidamente.
 
-Por último, debes asegurarte de que tu sitio esté registrado en [Google Search Console](https://search.google.com/search-console?hl=es) y estar al tanto de cualquier problema de SEO que pueda surgir.
+Por último, debes asegurarte de que tu sitio esté registrado en <a href='https://search.google.com/search-console?hl=es' target='_blank' rel='nofollow'>Google Search Console</a> y estar al tanto de cualquier problema de SEO que pueda surgir.
 
 En resumen, utilizar Next.js junto con MongoDB es una excelente manera de construir una aplicación web escalable y con buen rendimiento. Asegurándote de seguir las buenas prácticas de SEO y optimizando tu sitio para dispositivos móviles y velocidad de carga, podrás asegurar que tu aplicación sea fácil de encontrar y utilizar para tus usuarios.
 

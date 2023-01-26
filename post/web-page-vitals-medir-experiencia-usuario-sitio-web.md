@@ -31,7 +31,7 @@ La interacción del usuario se refiere a cómo un usuario interactúa con la pá
 
 La visualización en diferentes dispositivos es importante ya que cada vez más usuarios acceden a sitios web desde dispositivos móviles. Es importante asegurar que una página se vea bien en diferentes dispositivos y tamaños de pantalla para ofrecer una experiencia consistente y fácil de usar para todos los usuarios.
 
-En resumen, las Web Page Vitals son un conjunto de medidas clave que ayudan a evaluar la calidad de la experiencia del usuario en un sitio web. Es importante tener en cuenta estas medidas para mejorar la experiencia del usuario en un sitio web. Para obtener más información sobre las Web Page Vitals, puede visitar el [sitio web de Google](https://developers.google.com/web/tools/web-vitals) donde encontrará una guía completa y herramientas para medir y mejorar las medidas clave de su sitio web.
+En resumen, las Web Page Vitals son un conjunto de medidas clave que ayudan a evaluar la calidad de la experiencia del usuario en un sitio web. Es importante tener en cuenta estas medidas para mejorar la experiencia del usuario en un sitio web. Para obtener más información sobre las Web Page Vitals, puede visitar el <a href='https://developers.google.com/web/tools/web-vitals' target='_blank' rel='nofollow'>sitio web de Google</a> donde encontrará una guía completa y herramientas para medir y mejorar las medidas clave de su sitio web.
 
 De todas maneras, aquí te dejo unos tips y consejos para mejorar tu sitio web:
 
