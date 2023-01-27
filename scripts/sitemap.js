@@ -2,7 +2,8 @@ const fs = require('fs')
 const glob = require('glob')
 
 async function genSitemap (page) {
-  const BASE_URL = process.env.WEBSITE_URL
+  const PORT = process.env.PORT || 3000
+  const BASE_URL = process.env.BASE_URL || `http://localhost:${PORT}`
   const pageDirs = 'pages/**/*.js'
   let pagesPaths = await glob.sync(pageDirs)
 
