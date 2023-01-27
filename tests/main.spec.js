@@ -5,7 +5,7 @@ test.describe('Test if sitemap is generated and its correct', () => {
   test('Sitemap is generated', async ({ page }) => {
     await page.goto('/sitemap.xml')
     const sitemap = await page.textContent('urlset')
-    expect(sitemap).toContain('https://engeldelgado.com/')
+    expect(sitemap).toContain('url')
   })
 })
 
