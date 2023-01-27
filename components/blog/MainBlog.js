@@ -12,7 +12,7 @@ const MainBlog = ({ posts }) => {
         const postLink = `/post/${slug}`
         return (
 
-          <div key={id} className='flex flex-col overflow-hidden rounded-lg shadow-lg'>
+          <div key={id} className='flex flex-col overflow-hidden rounded-lg shadow-lg post'>
             <div className='flex-shrink-0'>
               <Link href={postLink}>
                 <Image className='object-cover w-full h-48' src={bannerImage} alt={title} width={384} height={192} />
