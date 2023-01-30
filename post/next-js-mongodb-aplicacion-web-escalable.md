@@ -4,7 +4,7 @@ title: "Construye una App escalable con Next.js y MongoDB: Tutorial y consejos"
 author:
     name: "Engelbert Vizcaya"
     url: "https://engeldlgado.com"
-avatar: "https://res.cloudinary.com/dxhsmq1pv/image/upload/v1674602092/engeldlgado/avatar_zxqozh.jpg"
+avatar: "/imagenes/profile-pic.png"
 category: "Desarrollo web"
 date: "24-01-2023"
 bannerImage: "https://res.cloudinary.com/dxhsmq1pv/image/upload/v1674619393/engeldlgado/post/writing-code-next-js_fbjxny.jpg"

@@ -4,7 +4,7 @@ title: "Mejora la experiencia de usuario con Web Page Vitals"
 author:
     name: "Engelbert Vizcaya"
     url: "https://engeldlgado.com"
-avatar: "https://res.cloudinary.com/dxhsmq1pv/image/upload/v1674602092/engeldlgado/avatar_zxqozh.jpg"
+avatar: "/imagenes/profile-pic.png"
 category: "Desarrollo web"
 date: "24-01-2023"
 bannerImage: "https://res.cloudinary.com/dxhsmq1pv/image/upload/v1674606061/engeldlgado/post/core-web-vitals-banner_tbusx2.jpg"

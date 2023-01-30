@@ -4,6 +4,8 @@ import md from 'markdown-it'
 import Post from '../../components/blog/Post'
 import MainLayout from '../../components/layout/MainLayout'
 
+const HOST = process.env.NEXT_PUBLIC_URL || 'http://localhost:3000'
+
 // The page for each post
 export default function SinglePost ({ frontmatter, content, slug }) {
   // Destructure the frontmatter
@@ -56,7 +58,7 @@ export default function SinglePost ({ frontmatter, content, slug }) {
       description={excerpt}
       ogType='website'
       ogUrl={`https://engeldelgado.com/post/${slug}`}
-      ogImage={bannerImage}
+      ogImage={HOST + `/api/og?title=${title}&excerpt=${excerpt}`}
       ogDescription={excerpt}
       schemaObject={structureData}
     >
