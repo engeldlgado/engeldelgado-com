@@ -87,30 +87,39 @@ Ahora que tienes tus modelos Mongoose creados, puedes utilizarlos en tus página
 
 Aquí hay un ejemplo de cómo crear un nuevo post utilizando el modelo "Post" que creamos anteriormente:
 
-```javascript
-import { useState } from  'react'
-import { useRouter } from  'next/router'
-import  Post  from  '../models/Post'
+``` jsx
+import { useState } from 'react'
+import { useRouter } from 'next/router'
+import Post from '../models/Post'
 
-export  default  function  CreatePost () {
-const [title, setTitle] =  useState('')
-const [content, setContent] =  useState('')
-const  router  =  useRouter()
+export default function CreatePost () {
+  const [title, setTitle] = useState('')
+  const [content, setContent] = useState('')
+  const router = useRouter()
 
-async  function  handleSubmit (e) {
-e.preventDefault()
-const  post  =  new  Post({ title, content })
-await  post.save()
-router.push('/')
-}
+  async function handleSubmit (e) {
+    e.preventDefault()
+    const post = new Post({ title, content })
+    await post.save()
+    router.push('/')
+  }
 
-return (
-<form  onSubmit={handleSubmit}>
-	<label> Title: <input  type='text'  value={title}  onChange={e  =>  setTitle(e.target.value)}  /> </label>
-	<label> Content: <textarea  value={content}  onChange={e  =>  setContent(e.target.value)}  /> </label>
-	<button  type='submit'>Create</button>
-</form>
-)
+  return (
+    <form onSubmit={handleSubmit}>
+      <label> Title </label>
+      <input
+        type='text'
+        value={title}
+        onChange={e => setTitle(e.target.value)}
+      />
+      <label> Content </label>
+      <textarea
+        value={content}
+        onChange={e => setContent(e.target.value)}
+      />
+      <button type='submit'>Create</button>
+    </form>
+  )
 }
 ```
 *¿ahora como obtengo lo que he publicado? Te preguntarás*
@@ -118,7 +127,7 @@ return (
 Un ejemplo de cómo obtener los datos de MongoDB en tu aplicación Next.js sería utilizando el método `find` de Mongoose. El método `find` te permite buscar y obtener documentos de tu base de datos MongoDB.
 
 Por ejemplo, si quieres obtener todos los documentos de una colección "posts", podrías utilizar el siguiente código en tu página en Next.js:
-``` javascript
+``` jsx
 import { useEffect, useState } from 'react';
 import Post from '../models/Post';
 

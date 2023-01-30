@@ -1,6 +1,7 @@
 import fs from 'fs'
 import matter from 'gray-matter'
-import md from 'markdown-it'
+import Prism from 'prismjs'
+import 'prism-themes/themes/prism-one-dark.css'
 import Post from '../../components/blog/Post'
 import MainLayout from '../../components/layout/MainLayout'
 
@@ -10,6 +11,8 @@ const HOST = process.env.NEXT_PUBLIC_URL || 'http://localhost:3000'
 export default function SinglePost ({ frontmatter, content, slug }) {
   // Destructure the frontmatter
   const { title, author, date, bannerImage, tags, excerpt } = frontmatter
+
+  // Prism for code highlighting
 
   // date ISO 8601
 
@@ -63,7 +66,7 @@ export default function SinglePost ({ frontmatter, content, slug }) {
       schemaObject={structureData}
     >
       <Post heading={frontmatter}>
-        <article className='mx-auto prose prose-img:rounded-md prose-img:shadow-md lg:prose-lg dark:prose-dark' dangerouslySetInnerHTML={{ __html: md().render(content) }} />
+        <article className='mx-auto prose prose-img:rounded-md prose-img:shadow-md prose-code:break-words lg:prose-lg dark:prose-dark' dangerouslySetInnerHTML={{ __html: content }} />
         {/* hashtags */}
         <div className='flex flex-wrap justify-center mt-10'>
           {tags.map((tag, index) => (
@@ -98,10 +101,30 @@ export async function getStaticPaths () {
 export async function getStaticProps ({ params: { slug } }) {
   const fileName = fs.readFileSync(`post/${slug}.md`, 'utf-8')
   const { data: frontmatter, content } = matter(fileName)
+  // encoder utf-8
+  const md = require('markdown-it')({
+    html: true,
+    highlight: function (str, lang) {
+      // try to load the language dynamically for the code highlight
+      if (lang && !Prism.languages[lang]) {
+        try {
+          require('prismjs/components/prism-' + lang + '.js')
+        } catch (e) {
+          console.log('Error loading language: ' + lang)
+        }
+      }
+      // if the language is loaded, render it
+      if (lang && Prism.languages[lang]) {
+        return '<pre className="language-' + lang + '"><code className="language-' + lang + '">' + Prism.highlight(str, Prism.languages[lang], lang) + '</code></pre>'
+      } else {
+        return '<pre className="language-txt"><code className="language-txt">' + md.utils.escapeHtml(str) + '</code></pre>'
+      }
+    }
+  })
   return {
     props: {
       frontmatter,
-      content,
+      content: md.render(content),
       slug
     }
   }
