@@ -6,6 +6,7 @@ import {
   FastForwardIcon,
   RefreshIcon
 } from '@heroicons/react/outline'
+import Link from 'next/link'
 import Image from 'next/image'
 import Logo from '../svg/Logo'
 import MainBlog from '../blog/MainBlog'
@@ -159,7 +160,13 @@ export default function MidSection ({ posts }) {
               Te mantendré actualizado sobre las últimas tendencias y te guiaré a través de cada paso para convertirte en un experto en el campo. ¡No te pierdas mi información valiosa y únete a mi comunidad de aprendizaje hoy!
             </p>
           </div>
-          <MainBlog posts={posts} />
+          <MainBlog posts={posts} postLength={3} />
+        </div>
+
+        <div className='flex justify-center mt-12'>
+          <Link href='/blog' className='inline-flex items-center px-6 py-2 text-base font-medium text-white transition-colors duration-500 border border-transparent rounded-md shadow-sm bg-secondary hover:bg-orange-400 dark:bg-primary dark:hover:bg-indigo-800'>
+            Ver más
+          </Link>
         </div>
       </div>
 

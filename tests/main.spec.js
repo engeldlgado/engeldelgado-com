@@ -19,7 +19,7 @@ test.describe('Test Functionality of the Page', () => {
 
   test('Load blog page', async ({ page }) => {
     await page.goto('/blog')
-    const title = await page.textContent('h1')
+    const title = await page.textContent('h2')
     expect(title).toContain('Blog')
   })
 

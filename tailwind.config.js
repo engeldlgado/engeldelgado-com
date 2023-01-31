@@ -19,7 +19,24 @@ module.exports = {
                 color: theme('colors.primary')
               }
             },
+            code: {
+              backgroundColor: theme('colors.gray.300'),
+              borderRadius: '0.25rem!important',
+              fontWeight: '400!important'
+            },
             maxWidth: '90ch'
+          }
+        },
+        dark: {
+          css: {
+            code: {
+              color: theme('colors.gray.300'),
+              backgroundColor: theme('colors.black')
+            },
+            pre: {
+              color: theme('colors.gray.300'),
+              backgroundColor: theme('colors.black')
+            }
           }
         }
       })

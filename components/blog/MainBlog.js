@@ -1,18 +1,25 @@
 import Link from 'next/link'
 import Image from 'next/image'
 
-const MainBlog = ({ posts }) => {
+const MainBlog = ({ posts, postLength }) => {
+  const orderedPosts = posts.sort((a, b) => {
+    return new Date(b.frontmatter.id) - new Date(a.frontmatter.id)
+  })
+
+  function limitPosts (posts, limit) {
+    return posts.slice(0, limit)
+  }
   return (
     <div className='grid max-w-md gap-8 px-4 mx-auto mt-12 sm:max-w-lg sm:px-6 lg:px-8 lg:grid-cols-3 lg:max-w-7xl'>
-      {posts.map(post => {
+      {limitPosts(orderedPosts, postLength).map((post, index) => {
         // extract slug and frontmatter
         const { slug, frontmatter } = post
         // extract frontmatter properties
-        const { id, title, author, category, date, bannerImage, excerpt, avatar, readTime } = frontmatter
+        const { title, author, category, date, bannerImage, excerpt, avatar, readTime } = frontmatter
         const postLink = `/post/${slug}`
         return (
 
-          <div key={id} className='flex flex-col overflow-hidden rounded-lg shadow-lg post'>
+          <div key={index} className='flex flex-col overflow-hidden rounded-lg shadow-lg post'>
             <div className='flex-shrink-0'>
               <Link href={postLink}>
                 <Image className='object-cover w-full h-48' src={bannerImage} alt={title} width={384} height={192} />
