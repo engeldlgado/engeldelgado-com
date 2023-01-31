@@ -37,12 +37,10 @@ async function genRSS () {
       <channel>
         <title>Blog de soluciones de desarrollo web y marketing | Engel Delgado</title>
         <description>Aprende a mejorar tu presencia en línea con nuestros artículos de desarrollo web y marketing. Explora nuestras soluciones innovadoras y conviértete en un experto en el tema.</description>
-        <atom:link href="${BASE_URL}/feed.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="${BASE_URL}/rss.xml" rel="self" type="application/rss+xml" />
         <link>${BASE_URL}</link>
         <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
         <language>es</language>
-        <sy:updatePeriod>hourly</sy:updatePeriod>
-        <sy:updateFrequency>1</sy:updateFrequency>
         <image>
           <url>${BASE_URL}/images/logo.png</url>
           <title>Blog de soluciones de desarrollo web y marketing | Engel Delgado</title>
@@ -55,7 +53,7 @@ async function genRSS () {
               <item>
                 <title>${post.frontmatter.title}</title>
                 <link>${BASE_URL}/${post.slug}</link>
-                <dc:creator>${post.frontmatter.author.name}</dc:creator>
+                <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">${post.frontmatter.author.name}</dc:creator>
                 <pubDate>${new Date(post.frontmatter.date).toUTCString()}</pubDate>
                 <guid>${BASE_URL}/${post.slug}</guid>
                 <description>${post.frontmatter.excerpt}</description>
