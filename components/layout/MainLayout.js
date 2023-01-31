@@ -67,6 +67,7 @@ const Layout = ({ children, title, description, ogType, ogUrl, ogImage, ogDescri
         <meta name='robots' content='index, follow' />
         <meta name='googlebot' content='index, follow' />
         <meta name='bingbot' content='index, follow' />
+        <link rel='alternate' type='application/rss+xml' href='/rss.xml' title='Blog Feed de soluciones de desarrollo web y marketing | Engel Delgado' />
       </Head>
       <Navigation
         theme={theme}

@@ -29,8 +29,9 @@ yarn-error.log*
 .env*.local
 .env
 
-# sitemap
+# sitemap and rss
 sitemap.xml
+rss.xml
 
 # vercel
 .vercel
