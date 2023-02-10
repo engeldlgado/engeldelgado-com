@@ -1,7 +1,18 @@
 import fs from 'fs'
 import matter from 'gray-matter'
-import Prism from 'prismjs'
 import 'prism-themes/themes/prism-one-dark.css'
+import Prism from 'prismjs'
+import {
+  FacebookIcon,
+  FacebookShareButton,
+  LinkedinIcon,
+  LinkedinShareButton, RedditIcon,
+  RedditShareButton, TelegramIcon,
+  TelegramShareButton, TwitterIcon,
+  TwitterShareButton,
+  WhatsappIcon,
+  WhatsappShareButton
+} from 'react-share'
 import Post from '../../components/blog/Post'
 import MainLayout from '../../components/layout/MainLayout'
 
@@ -18,6 +29,12 @@ export default function SinglePost ({ frontmatter, content, slug }) {
 
   const dateFormated = date.split('-')
   const dateISO = `${dateFormated[2]}-${dateFormated[1]}-${dateFormated[0]}T00:00:00-04:00`
+
+  // tags converted to a single line string
+  const tagsToHashtags = tags.map((tag) => `#${tag.replace(/\s+/g, '-')}`).join(' ').toLowerCase()
+
+  // tags converted to a array of strings
+  const tagsToHashtagsArray = (tags) => tags.map((tag) => `${tag.replace(/\s+/g, '')}`).join(' ').toLowerCase().split(' ')
 
   const structureData = [
     {
@@ -75,6 +92,45 @@ export default function SinglePost ({ frontmatter, content, slug }) {
             </div>
           ))}
         </div>
+        {/* share title */}
+        <div className='flex flex-wrap justify-center mt-10'>
+          <div className='mr-2 text-sm text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100'>
+            Comparte este artículo con tus amigos en las redes sociales
+          </div>
+        </div>
+        <div className='flex flex-wrap justify-center mt-10'>
+          <div className='mr-2 text-sm duration-300 rounded-full hover:shadow-md hover:scale-110'>
+            <FacebookShareButton url={`https://engeldelgado.com/post/${slug}`} quote={title} hashtag={tagsToHashtags} className='flex items-center'>
+              <FacebookIcon size={32} round />
+            </FacebookShareButton>
+          </div>
+          <div className='mr-2 text-sm duration-300 rounded-full hover:shadow-md hover:scale-110'>
+            <TwitterShareButton url={`https://engeldelgado.com/post/${slug}`} title={title} hashtags={tagsToHashtagsArray(tags)} className='flex items-center'>
+              <TwitterIcon size={32} round />
+            </TwitterShareButton>
+          </div>
+          <div className='mr-2 text-sm duration-300 rounded-full hover:shadow-md hover:scale-110'>
+            <LinkedinShareButton url={`https://engeldelgado.com/post/${slug}`} title={title} summary={excerpt} source='https://engeldelgado.com' className='flex items-center'>
+              <LinkedinIcon size={32} round />
+            </LinkedinShareButton>
+          </div>
+          <div className='mr-2 text-sm duration-300 rounded-full hover:shadow-md hover:scale-110 md:hidden'>
+            <WhatsappShareButton url={`https://engeldelgado.com/post/${slug}`} title={title} separator=':: ' className='flex items-center'>
+              <WhatsappIcon size={32} round />
+            </WhatsappShareButton>
+          </div>
+          <div className='mr-2 text-sm duration-300 rounded-full hover:shadow-md hover:scale-110'>
+            <TelegramShareButton url={`https://engeldelgado.com/post/${slug}`} title={title} className='flex items-center'>
+              <TelegramIcon size={32} round />
+            </TelegramShareButton>
+          </div>
+          <div className='mr-2 text-sm duration-300 rounded-full hover:shadow-md hover:scale-110'>
+            <RedditShareButton url={`https://engeldelgado.com/post/${slug}`} title={title} windowWidth={800} windowHeight={600} className='flex items-center'>
+              <RedditIcon size={32} round />
+            </RedditShareButton>
+          </div>
+        </div>
+
       </Post>
     </MainLayout>
   )

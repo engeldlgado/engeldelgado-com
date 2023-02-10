@@ -57,7 +57,8 @@ console.log(clonedObj.name); // Jane
 const arr = [1, 2, { name: 'John' }];
 const clonedArr = structuredClone(arr);
 // Cambios en la copia no afectan al array original
-clonedArr[2].name = 'Jane'; console.log(arr[2].name); // John
+clonedArr[2].name = 'Jane';
+console.log(arr[2].name); // John
 console.log(clonedArr[2].name); // Jane
 
 ```
