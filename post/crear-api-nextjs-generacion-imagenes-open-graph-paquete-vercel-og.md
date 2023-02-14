@@ -3,7 +3,7 @@ id: 3
 title: "Crea tu API de Imágenes Open Graph con Next.js y @vercel/og"
 author:
     name: "Engelbert Vizcaya"
-    url: "https://engeldlgado.com"
+    url: "https://engeldelgado.com"
 avatar: "/imagenes/profile-pic.png"
 category: "Desarrollo web"
 date: "30-01-2023"

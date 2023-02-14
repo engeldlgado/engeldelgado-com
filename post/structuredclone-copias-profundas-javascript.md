@@ -3,7 +3,7 @@ id: 4
 title: "Aprende a hacer copias profundas de objetos con structuredClone()"
 author:
     name: "Engelbert Vizcaya"
-    url: "https://engeldlgado.com"
+    url: "https://engeldelgado.com"
 avatar: "/imagenes/profile-pic.png"
 category: "Desarrollo web"
 date: "31-01-2023"

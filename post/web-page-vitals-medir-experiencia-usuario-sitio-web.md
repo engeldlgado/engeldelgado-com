@@ -3,7 +3,7 @@ id: 1
 title: "Mejora la experiencia de usuario con Web Page Vitals"
 author:
     name: "Engelbert Vizcaya"
-    url: "https://engeldlgado.com"
+    url: "https://engeldelgado.com"
 avatar: "/imagenes/profile-pic.png"
 category: "Desarrollo web"
 date: "24-01-2023"

@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react'
+import { ReplyIcon } from '@heroicons/react/solid'
 import Head from 'next/head'
 import Link from 'next/link'
+import { useEffect, useState } from 'react'
 import Logo from '../components/svg/Logo'
-import { ReplyIcon } from '@heroicons/react/solid'
 
 const Custom404 = () => {
   const [theme, setTheme] = useState('')
@@ -41,7 +41,7 @@ const Custom404 = () => {
         <meta property='og:title' content='404 - Página no encontrada' />
         <meta property='og:description' content='La página que estás buscando no existe.' />
         <meta property='og:type' content='website' />
-        <meta property='og:url' content='https://engeldlgado.com/404' />
+        <meta property='og:url' content='https://engeldelgado.com/404' />
         <meta property='og:image' content='https://engeldelgado.com/api/og?title=404%20-%20Página%20no%20encontrada&description=La%20página%20que%20estás%20buscando%20no%20existe.' />
         <meta property='og:site_name' content='Engel Delgado | Full Stack Developer' />
         <meta name='twitter:card' content='summary_large_image' />

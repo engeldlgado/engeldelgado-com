@@ -3,7 +3,7 @@ id: 5
 title: "Maneja los errores de JavaScript como un Desarrollador Senior"
 author:
     name: "Engelbert Vizcaya"
-    url: "https://engeldlgado.com"
+    url: "https://engeldelgado.com"
 avatar: "/imagenes/profile-pic.png"
 category: "JavaScript"
 date: "10-02-2023"
