@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react'
 import Head from 'next/head'
+import Script from 'next/script'
+import React, { useEffect, useState } from 'react'
 import Navigation from '../navigation/Navigation'
 import { Footer } from '../sections/Footer'
 
@@ -55,6 +56,10 @@ const Layout = ({ children, title, description, ogType, ogUrl, ogImage, ogDescri
         <link rel='canonical' href={ogUrl} />
         {/* Png Favicon / SVG */}
         <link rel='icon' type='image/png' href='/imagenes/favicon.png' />
+        <meta name='robots' content='index, follow' />
+        <meta name='googlebot' content='index, follow' />
+        <meta name='bingbot' content='index, follow' />
+        <link rel='alternate' type='application/rss+xml' href='/rss.xml' title='Blog Feed de soluciones de desarrollo web y marketing | Engel Delgado' />
         {schemaObject && (
           schemaObject.map((item, index) => (
             <script
@@ -64,11 +69,18 @@ const Layout = ({ children, title, description, ogType, ogUrl, ogImage, ogDescri
             />
           ))
         )}
-        <meta name='robots' content='index, follow' />
-        <meta name='googlebot' content='index, follow' />
-        <meta name='bingbot' content='index, follow' />
-        <link rel='alternate' type='application/rss+xml' href='/rss.xml' title='Blog Feed de soluciones de desarrollo web y marketing | Engel Delgado' />
+
       </Head>
+      <Script src='https://www.googletagmanager.com/gtag/js?id=G-HHHW984GNM' strategy='afterInteractive' />
+      <Script id='google-analytics' strategy='afterInteractive'>
+        {`
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-HHHW984GNM');
+      `}
+      </Script>
       <Navigation
         theme={theme}
         setTheme={setTheme}
