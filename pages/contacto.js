@@ -1,8 +1,30 @@
 import { MailIcon, PhoneIcon } from '@heroicons/react/solid'
 import Image from 'next/image'
+import { useEffect, useRef, useState } from 'react'
 import { PopupButton } from 'react-calendly'
 import ContactHero from '../components/hero/ContactHero'
 import MainLayout from '../components/layout/MainLayout'
+
+function Calendly ({ selector }) {
+  const calendlyRef = useRef()
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    calendlyRef.current = document.querySelector(selector)
+    setMounted(true)
+  }, [selector])
+
+  return mounted
+    ? (
+      <PopupButton
+        url='https://calendly.com/engeldlgado/contacta-conmigo'
+        text='Agenda una cita'
+        className='inline-flex items-center px-6 py-2 text-base font-medium text-white transition-colors duration-500 border border-transparent rounded-md shadow-sm bg-secondary hover:bg-orange-400 dark:bg-primary dark:hover:bg-indigo-800'
+        rootElement={document.querySelector(selector)}
+      />
+      )
+    : null
+}
 
 const ContactPage = () => {
   const structureData = [
@@ -44,6 +66,7 @@ const ContactPage = () => {
       }
     }
   ]
+
   return (
     <MainLayout
       title='Contacto | Engelbert Vizcaya - Soluciones de desarrollo web y marketing'
@@ -207,12 +230,7 @@ const ContactPage = () => {
                   <p className='w-11/12 pt-5 mx-auto mt-1 mb-8 text-sm text-center text-warm-gray-500'>
                     Como Full Stack Developer, estoy aquí para ayudarte a crear sitios web impresionantes utilizando las últimas tecnologías y tendencias. Sigue mi blog para aprender más sobre desarrollo web y conviértete en un experto en Full Stack. Si estás listo para llevar tu proyecto al siguiente nivel, ¡contáctame para programar una cita y comenzar a trabajar juntos!
                   </p>
-                  <PopupButton
-                    url='https://calendly.com/engeldlgado/contacta-conmigo'
-                    text='Agenda una cita'
-                    className='inline-flex items-center px-6 py-2 text-base font-medium text-white transition-colors duration-500 border border-transparent rounded-md shadow-sm bg-secondary hover:bg-orange-400 dark:bg-primary dark:hover:bg-indigo-800'
-                    rootElement={typeof window !== 'undefined' ? document.getElementById('contact') : null}
-                  />
+                  <Calendly selector='#contact' />
                 </div>
               </div>
             </div>
