@@ -47,7 +47,7 @@ const ContactPage = () => {
 
   let rootEl = null
   if (typeof window !== 'undefined') {
-    rootEl = document.getElementById('__next') || document.body
+    rootEl = document.getElementById('contact') || document.body
   }
   return (
     <MainLayout
@@ -60,6 +60,8 @@ const ContactPage = () => {
       schemaObject={structureData}
     >
       <ContactHero />
+      {/* This element needs to be light to properly render calendly */}
+      <section id='contact' data-theme='light' />
       <section className='relative py-16 bg-gray-50 dark:bg-base-100 sm:py-24 lg:py-24'>
         <div className='relative' aria-labelledby='contact-heading'>
           <div className='px-4 mx-auto max-w-7xl sm:px-6 lg:px-8'>
