@@ -44,11 +44,6 @@ const ContactPage = () => {
       }
     }
   ]
-
-  let rootEl = null
-  if (typeof window !== 'undefined') {
-    rootEl = document.getElementById('contact') || document.body
-  }
   return (
     <MainLayout
       title='Contacto | Engelbert Vizcaya - Soluciones de desarrollo web y marketing'
@@ -216,7 +211,7 @@ const ContactPage = () => {
                     url='https://calendly.com/engeldlgado/contacta-conmigo'
                     text='Agenda una cita'
                     className='inline-flex items-center px-6 py-2 text-base font-medium text-white transition-colors duration-500 border border-transparent rounded-md shadow-sm bg-secondary hover:bg-orange-400 dark:bg-primary dark:hover:bg-indigo-800'
-                    rootElement={rootEl}
+                    rootElement={typeof window !== 'undefined' ? document.getElementById('contact') : null}
                   />
                 </div>
               </div>
