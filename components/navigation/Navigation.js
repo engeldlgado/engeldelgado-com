@@ -1,5 +1,5 @@
-import Logo from '../svg/Logo'
 import Link from 'next/link'
+import Logo from '../svg/Logo'
 
 export function Links ({ isNav }) {
   const links = [
@@ -7,7 +7,7 @@ export function Links ({ isNav }) {
     { name: 'Acerca de mí', href: '/#about' },
     // { name: 'Portfolio', href: '/portfolio' },
     { name: 'Blog', href: '/blog' },
-    { name: 'Contacto', href: '/#contact' }
+    { name: 'Contacto', href: '/contacto' }
   ]
 
   if (isNav) {

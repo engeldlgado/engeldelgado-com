@@ -1,7 +1,7 @@
 import fs from 'fs'
 import matter from 'gray-matter'
-import MainLayout from '../components/layout/MainLayout'
 import MainHero from '../components/hero/MainHero'
+import MainLayout from '../components/layout/MainLayout'
 import MidSection from '../components/sections/MidSection'
 
 export default function Home ({ posts }) {

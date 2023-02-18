@@ -1,8 +1,8 @@
-import { Html, Head, Main, NextScript } from 'next/document'
+import { Head, Html, Main, NextScript } from 'next/document'
 
 export default function Document () {
   return (
-    <Html className='scroll-smooth' lang='es' style={{ scrollBehavior: 'smooth' }}>
+    <Html id='root' className='scroll-smooth' lang='es' style={{ scrollBehavior: 'smooth' }}>
       <Head />
       <body>
         <Main />
