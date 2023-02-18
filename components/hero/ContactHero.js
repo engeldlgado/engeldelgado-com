@@ -30,7 +30,7 @@ export default function ContactHero () {
             </div>
           </div>
 
-          <div className='z-0 mt-12 -mb-16 sm:-mb-48 lg:m-0 lg:mt-16 lg:relative'>
+          <div className='z-0 mt-12 -mb-0 sm:-mb-0 lg:m-0 lg:mt-16 lg:relative'>
             <div className='max-w-md px-4 mx-auto sm:max-w-2xl sm:px-6 lg:max-w-none lg:px-0'>
               {/* Illustration taken from Lucid Illustrations: https://lucid.pixsellz.io/ */}
               <Image
