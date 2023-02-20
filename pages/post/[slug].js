@@ -31,10 +31,10 @@ export default function SinglePost ({ frontmatter, content, slug }) {
   const dateISO = `${dateFormated[2]}-${dateFormated[1]}-${dateFormated[0]}T00:00:00-04:00`
 
   // tags converted to a single line string
-  const tagsToHashtags = tags.map((tag) => `#${tag.replace(/\s+/g, '-')}`).join(' ').toLowerCase()
+  const tagsToHashtags = tags.map((tag) => `#${tag.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/\s+/g, '-')}`).join(' ').toLowerCase()
 
   // tags converted to a array of strings
-  const tagsToHashtagsArray = (tags) => tags.map((tag) => `${tag.replace(/\s+/g, '')}`).join(' ').toLowerCase().split(' ')
+  const tagsToHashtagsArray = (tags) => tags.map((tag) => `${tag.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/\s+/g, '')}`).join(' ').toLowerCase().split(' ')
 
   const structureData = [
     {
@@ -88,7 +88,7 @@ export default function SinglePost ({ frontmatter, content, slug }) {
         <div className='flex flex-wrap justify-center mt-10'>
           {tags.map((tag, index) => (
             <div key={index} className='mr-2 text-sm text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 hover:underline'>
-              #{tag.replace(/\s+/g, '-')}
+              #{tag.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/\s+/g, '-').toLowerCase()}
             </div>
           ))}
         </div>
