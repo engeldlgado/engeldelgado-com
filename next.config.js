@@ -20,10 +20,6 @@ const securityHeaders = [
   {
     key: 'Referrer-Policy',
     value: 'origin-when-cross-origin'
-  },
-  {
-    key: 'Content-Security-Policy',
-    value: "default-src 'self' https: data: 'unsafe-inline' 'unsafe-eval'; script-src 'self' https: 'unsafe-inline' 'unsafe-eval'; style-src 'self' https: 'unsafe-inline'; img-src 'self' https: data:; media-src 'self' https: data:; frame-src 'self' https:; font-src 'self' https: data:; connect-src 'self' https: wss:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self';"
   }
 ]
 
